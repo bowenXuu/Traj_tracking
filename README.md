@@ -72,7 +72,7 @@ Take off from any location and send a fixed point to control the movement of the
 rosrun Traj_tracking rc_ctl
 ```
 ***Real flight control process：***
-1. Make sure all channels 567 are switch to low, throttle adjusted to the lowest, start **rc_ctl** node
+1. Make sure all channels 567 are switch to low, throttle adjusted to the lowest, start `rc_ctl` node
 2. Channel 5 switch to in the send takeoff fixed point, at this time rviz should be visible on the fixed point in the aircraft directly above the 0.8 m height, at this time the throttle adjustment to the middle position
 3. Channel 6 switch to high to unlock the aircraft, wait for the aircraft to take off, after successful takeoff will hover, before the subsequent operation
 4. You can change the xyz position of the aircraft fixed point by controlling 123 channels
@@ -86,7 +86,7 @@ Take off from any location and control the MAV movement according to the pre-rec
 rosrun Traj_tracking traj_ctl
 ```
 ***Real flight control process：***
-1. Make sure all channels 567 are switch to low, throttle to the minimum, start **traj_ctl** node
+1. Make sure all channels 567 are switch to low, throttle to the minimum, start `traj_ctl` node
 2. Channel 5 switch to send the takeoff fixed point, at this time the fixed point should be visible on the rviz at 0.8m height directly above the aircraft
 3. Channel 6 switch to high to unlock the aircraft, wait for the aircraft to take off, after successful takeoff, it will automatically fly to the first point of the preset trajectory
 4. After reaching the starting point of the trajectory, the terminal will send ROS INFO: You can now send the trajectory message!
