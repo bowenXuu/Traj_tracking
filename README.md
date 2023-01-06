@@ -52,8 +52,8 @@ roslaunch Traj_tracking rviz.launch
 ### 3.2. RC function introduction
 
 - Channel 5：Control Mode
-  - Low：Entering stablized self-stabilization mode
-  - Medium：Start streaming sending fixed points
+  - Low：Entering stablized
+  - Medium：Start streaming setpoints
 - Channel 6：Off-board mode
   - Low：MAV on lock
   - Medium：
