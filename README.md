@@ -67,12 +67,12 @@ roslaunch Traj_tracking rviz.launch
 ### 3.3. Select the function you want to use
 **Function 1 (Used to test whether the position control of MAV is normal)**
 
-Take off from any location and send a fixed point to control the movement of the drone in real time by remote control after taking off
+Take off from any location and send a fixed point to control the movement of the MAV in real time by remote control after taking off
 ```bash
 rosrun Traj_tracking rc_ctl
 ```
 ***Real flight control process：***
-1. Ensure all channels 567 are switch low, throttle adjusted to the lowest, start **rc_ctl** node
+1. Make sure all channels 567 are switch low, throttle adjusted to the lowest, start **rc_ctl** node
 2. Channel 5 switch in the send takeoff fixed point, at this time rviz should be visible on the fixed point in the aircraft directly above the 0.8 m height, at this time the throttle adjustment to the middle position
 3. Channel 6 switch high to unlock the aircraft, wait for the aircraft to take off, after successful takeoff will hover, before the subsequent operation
 4. You can change the xyz position of the aircraft fixed point by controlling 123 channels
@@ -81,7 +81,7 @@ rosrun Traj_tracking rc_ctl
 ---
 **Function 2**
 
-Take off from any location and control the drone movement according to the pre-recorded trajectory information after take-off
+Take off from any location and control the MAV movement according to the pre-recorded trajectory information after take-off
 ```bash
 rosrun Traj_tracking traj_ctl
 ```
