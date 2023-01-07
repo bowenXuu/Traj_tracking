@@ -73,9 +73,9 @@ rosrun Traj_tracking rc_ctl
 ```
 ***Real flight control process：***
 1. Make sure all channels 567 are switch to low, throttle adjusted to the lowest, start `rc_ctl` node
-2. Channel 5 switch to in the send takeoff setpoint, at this time rviz should be visible on the setpoint in the aircraft directly above the 0.8 m height, at this time the throttle adjustment to the middle position
-3. Channel 6 switch to high to unlock the aircraft, wait for the aircraft to take off, after successful takeoff will hover, before the subsequent operation
-4. You can change the xyz position of the aircraft setpoint by controlling 123 channels
+2. Channel 5 switch to in the send takeoff setpoint, at this time rviz should be visible on the setpoint in the MAV directly above the 0.8 m height, at this time the throttle adjustment to the middle position
+3. Channel 6 switch to high to unlock the MAV, wait for the MAV to take off, after successful takeoff will hover, before the subsequent operation
+4. You can change the xyz position of the MAV setpoint by controlling 123 channels
 5. When the mission is over, Channel 6 switch to land.
 6. After landing smoothly, execute Channel 7 switch to high, Channel 6 switch to low, Channel 5 switch to low, Channel 7 switch to low in turn to achieve reset.
 ---
@@ -87,11 +87,11 @@ rosrun Traj_tracking traj_ctl
 ```
 ***Real flight control process：***
 1. Make sure all channels 567 are switch to low, throttle to the minimum, start `traj_ctl` node
-2. Channel 5 switch to send the takeoff setpoint, at this time the setpoint should be visible on the rviz at 0.8m height directly above the aircraft
-3. Channel 6 switch to high to unlock the aircraft, wait for the aircraft to take off, after successful takeoff, it will automatically fly to the first point of the preset trajectory
+2. Channel 5 switch to send the takeoff setpoint, at this time the setpoint should be visible on the rviz at 0.8m height directly above the MAV
+3. Channel 6 switch to high to unlock the MAV, wait for the MAV to take off, after successful takeoff, it will automatically fly to the first point of the preset trajectory
 4. After reaching the starting point of the trajectory, the terminal will send `ROS INFO: You can now send the trajectory message!`
-5. After seeing the prompt from the terminal, play the rosbag with the trajectory message, and the aircraft will follow the pre-planned route and time stamp for trajectory tracking
-6. When the mission is over (the aircraft flies back to the takeoff point in a circle along the trajectory), channel 6 will switch to land.
+5. After seeing the prompt from the terminal, play the rosbag with the trajectory message, and the MAV will follow the pre-planned route and time stamp for trajectory tracking
+6. When the mission is over (the MAV flies back to the takeoff point in a circle along the trajectory), channel 6 will switch to land.
 7. After the landing is confirmed to be smooth, execute channel 7 switch to high, channel 6 switch to low, channel 5 switch to low and channel 7 switch to low in turn to achieve reset.
 
 ## 4. Notes
