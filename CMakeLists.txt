@@ -25,7 +25,7 @@ catkin_package()
 # ################## source and driver ######################
 
 add_executable(nbv_ctl src/rc_ctl.cpp)
-target_link_libraries(nbv_ctl ${catkin_LIBRARIES} ${OpenCV_LIBS} dw)
+target_link_libraries(rc_ctl ${catkin_LIBRARIES} ${OpenCV_LIBS} dw)
 
 add_executable(tra_ctl src/traj_ctl.cpp)
-target_link_libraries(tra_ctl ${catkin_LIBRARIES} ${OpenCV_LIBS} dw)
+target_link_libraries(traj_ctl ${catkin_LIBRARIES} ${OpenCV_LIBS} dw)
