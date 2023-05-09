@@ -12,7 +12,7 @@
 **Tested on** :  Ubuntu 16.04 + ROS Kinetic.
 
 ```bash
-cd ~/Traj_tracking_ws/src
+cd Traj_tracking_ws/src
 git clone https://github.com/bowenXuu/Traj_tracking.git
 cd ..
 catkin_make
