@@ -1,39 +1,22 @@
 # Traj_tracking
 
-# Observe like a Swan: A Bionic Aerial Neck-eye System for Active Visual-inertial State Estimation
-
+这是一个简单的无人机轨迹追踪demo，也是一份offboard实飞控制踩坑经验总结
 ## 1. Introduction
-**Traj_tracking** as the basis for the implementation of the physical experiments in the above paper, is a good set of tools for MAVs to track a specific pre-defined trajectory.
+**Traj_tracking** is used for MAVs to track a pre-defined trajectory. Trajectory tracking is the basis for some complex functions
 - For MAVs developed using [px4](https://docs.px4.io/main/en/) as an autopilot.
 - MAV flight control development using motion capture systems such as [Vicon](https://www.vicon.com/software/tracker/) or [Optitrack](https://optitrack.com/software/motive/) for positional feedback.
-- Running requires trajectory message publication outside of this package, of type `trajectory_msgs/MultiDOFJointTrajectory`
+- Running requires trajectory message publication outside of this package, of type `trajectory_msgs::MultiDOFJointTrajectory`
 .
 
-Authors: To be added
-
-If you use **Traj_tracking** for your academic research, please cite the following paper.
-```
-@ARTICLE{,  
-  author={},  
-  journal={},  
-  title={},   
-  year={},  
-  volume={},  
-  number={},  
-  pages={},  
-  doi={}
-```
-
-
-
 ## 2. Installation
-Tested on Ubuntu 16.04 and 18.04.
+**Tested on** :  Ubuntu 16.04 + ROS Kinetic.
 
-```
-cd ~/catkin_ws/src
+```bash
+cd ~/Traj_tracking_ws/src
 git clone https://github.com/bowenXuu/Traj_tracking.git
 cd ..
 catkin_make
+source devel/setup.zsh
 ```
 
 ## 3. Try it on your own MAV
@@ -42,6 +25,7 @@ catkin_make
 Before performing the following steps, make sure that:
 - The motion capture is operating normally and the MAV is continuously receiving information about its own position.
 - Pixhawk and on-board computer are properly connected
+
 ```bash
 # Start the mavros node, connect the pixhawk to the nuc, and start receiving motion capture poses.
 sh ./src/Traj_tracking/scripts/px4_mocap.sh
@@ -68,6 +52,7 @@ roslaunch Traj_tracking rviz.launch
 **Function 1 (Used to test whether the position control of MAV is normal)**
 
 Take off from any location and send a setpoint to control the movement of the MAV in real time by remote control after taking off
+
 ```bash
 rosrun Traj_tracking rc_ctl
 ```
@@ -82,6 +67,7 @@ rosrun Traj_tracking rc_ctl
 **Function 2**
 
 Take off from any location and control the MAV movement according to the pre-recorded trajectory information after take-off
+
 ```bash
 rosrun Traj_tracking traj_ctl
 ```
